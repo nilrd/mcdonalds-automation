@@ -71,17 +71,17 @@ public class LancamentosTest {
 			System.out.println("Menu encontrado " + menuText);
 
 			assertEquals(lancamentosEsperados.get(i), menuText);
+			
 			File screenShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			try {
-				FileUtils.copyFile(screenShot, new File("./evidencias/screen.png"));
+				FileUtils.copyFile(screenShot, new File("./evidencias/screen_" + i + ".png"));
 			} catch (IOException e) {
 
 				e.printStackTrace();
 			}
-
-			driver.quit();
+			
 		}
 
-	}
-
+		driver.quit();
 }
+	}
